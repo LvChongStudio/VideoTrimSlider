@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff000000"
+    android:clipChildren="false"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/range_rv"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_centerInParent="true"
+        android:overScrollMode="never"
+        android:paddingBottom="2dp"
+        android:paddingLeft="@dimen/range_thumb_width"
+        android:paddingRight="@dimen/range_thumb_width"
+        android:paddingTop="2dp" />
+
+    <com.lvstudio.videotrimslider.RangeSlider
+        android:id="@+id/range_slider"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_centerInParent="true"
+        app:leftThumbDrawable="@drawable/thumb_drawable_l"
+        app:leftThumbIndex="0"
+        app:lineColor="@color/colorAccent"
+        app:lineHeight="2dp"
+        app:noticeTextSize="14dp"
+        app:rightThumbDrawable="@drawable/thumb_drawable_r"
+        app:rightThumbIndex="2000"
+        app:thumbWidth="@dimen/range_thumb_width"
+        app:tickCount="10000" />
+
+</RelativeLayout>
