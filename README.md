@@ -1,9 +1,9 @@
-# VideoTrimSlider
+# VideoTrimSlider 视频剪辑选择框
 
 
-video trim slider
+Android video trim slider like VUE
 
-仿VUE 视频剪辑选择框
+安卓 仿VUE 视频剪辑选择框
 
 
 ![image](https://github.com/LvChongStudio/VideoTrimSlider/blob/master/show.gif)
