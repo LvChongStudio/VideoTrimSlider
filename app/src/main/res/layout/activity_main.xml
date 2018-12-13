@@ -5,17 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ff000000"
-    android:clipChildren="false"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin">
+    android:clipChildren="false">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/range_rv"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
         android:overScrollMode="never"
         android:paddingBottom="2dp"
         android:paddingLeft="@dimen/range_thumb_width"
@@ -24,6 +21,43 @@
 
     <com.lvstudio.videotrimslider.RangeSlider
         android:id="@+id/range_slider"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        app:leftThumbDrawable="@drawable/thumb_drawable_l"
+        app:leftThumbIndex="0"
+        app:lineColor="@color/colorAccent"
+        app:lineHeight="2dp"
+        app:noticeTextSize="14dp"
+        app:rightThumbDrawable="@drawable/thumb_drawable_r"
+        app:rightThumbIndex="2000"
+        app:thumbWidth="@dimen/range_thumb_width"
+        app:tickCount="10000" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_centerInParent="true">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="70dp">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/range_rv2"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginLeft="@dimen/range_thumb_width"
+                android:layout_marginRight="@dimen/range_thumb_width"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp" />
+
+        </RelativeLayout>
+    </HorizontalScrollView>
+
+    <com.lvstudio.videotrimslider.RangeSlider2
+        android:id="@+id/range_slider2"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_centerInParent="true"

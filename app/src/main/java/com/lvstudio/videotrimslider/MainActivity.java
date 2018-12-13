@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
 
         initBgView();
         initSlider();
+
+        initBgView2();
+        initSlider2();
     }
 
     private void initSlider() {
@@ -57,6 +60,45 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public int getItemCount() {
                 return itemCount;
+            }
+        });
+    }
+
+    private void initSlider2() {
+        RangeSlider2 slider = (RangeSlider2) findViewById(R.id.range_slider2);
+        slider.setRangeChangeListener(new RangeSlider2.OnRangeChangeListener() {
+            @Override
+            public void onRangeChange(RangeSlider2 view, int startPercentage, int contentPercentage, int totalCount) {
+                // TODO something...
+            }
+        });
+    }
+
+    private void initBgView2() {
+        final int itemCount = 5;
+        int padding = getResources().getDimensionPixelOffset(R.dimen.activity_horizontal_margin);
+        int screenWidth = getResources().getDisplayMetrics().widthPixels;
+        int thumbWidth = getResources().getDimensionPixelOffset(R.dimen.range_thumb_width);
+        final int itemWidth = (screenWidth - (2 * (padding + thumbWidth))) / itemCount;
+
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.range_rv2);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        recyclerView.setAdapter(new RecyclerView.Adapter() {
+            @Override
+            public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+                ImageView view = new ImageView(parent.getContext());
+                view.setLayoutParams(new ViewGroup.LayoutParams(itemWidth, ViewGroup.LayoutParams.MATCH_PARENT));
+                return new ViewHolder(view);
+            }
+
+            @Override
+            public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+                ((ViewHolder) holder).setImage();
+            }
+
+            @Override
+            public int getItemCount() {
+                return 15;
             }
         });
     }
